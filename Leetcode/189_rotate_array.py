@@ -71,4 +71,36 @@ class Solution:
 
 
 
-# Add solution with cyclic replacement
+# Solution with cyclic replacement
+# The most intuitive but the most difficult to code
+# time complexity O(n)
+# memory complexity O(1)
+
+class Solution:
+    def rotate(self, nums: List[int], k: int) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        
+        visited_elt_count = 0
+        n = len(nums)
+        step = n - k
+    
+        cycle_start_idx = 0
+        
+        while visited_elt_count < n:
+            
+            crt_idx = cycle_start_idx
+            next_idx = (crt_idx + k) % n
+
+            hold = nums[crt_idx]
+            
+            while next_idx != cycle_start_idx:
+                nums[next_idx], hold = hold, nums[next_idx]
+                visited_elt_count += 1
+                crt_idx = next_idx
+                next_idx = (crt_idx + k) % n
+            
+            nums[next_idx] = hold
+            visited_elt_count += 1
+            cycle_start_idx += 1
