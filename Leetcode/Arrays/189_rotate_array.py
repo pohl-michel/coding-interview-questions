@@ -48,6 +48,9 @@ class Solution:
 # time complexity O(n)
 # memory complexity O(1)
 
+# Similar solution in Java here:
+# https://leetcode.com/problems/rotate-array/discuss/259418/Clear-cyclic-replacement-Java-solution-with-proof
+
 def reverse_array(nums: List[int], left_idx: int, right_idx: int):
     l = left_idx
     r = right_idx
