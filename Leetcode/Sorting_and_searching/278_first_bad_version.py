@@ -1,6 +1,10 @@
 # The isBadVersion API is already defined for you.
 # def isBadVersion(version: int) -> bool:
 
+def isBadVersion(my_int):
+    # to remove warning in VS code - function provided by leetcode
+    pass
+
 class Solution:
     def firstBadVersion(self, n: int) -> int:
         i, j = 1, n
